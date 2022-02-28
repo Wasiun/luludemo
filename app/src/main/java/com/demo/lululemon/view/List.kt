@@ -30,6 +30,7 @@ class List : Fragment(R.layout.fragment_list) {
 
         binding.addBtn.setOnClickListener {
             parentFragmentManager.commit {
+                addToBackStack(null)
                 setReorderingAllowed(true)
                 replace<AddFragment>(R.id.container_view)
             }

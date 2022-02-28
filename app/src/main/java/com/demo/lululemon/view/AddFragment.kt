@@ -19,10 +19,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         binding = FragmentAddBinding.bind(view)
         binding.saveBtn.setOnClickListener {
             viewModel.addToList(binding.inputEt.text.toString())
-            parentFragmentManager.commit {
-                setReorderingAllowed(true)
-                replace<List>(R.id.container_view)
-            }
+            parentFragmentManager.popBackStack()
         }
     }
 }
